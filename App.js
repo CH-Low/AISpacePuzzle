@@ -54,11 +54,10 @@ export default function App() {
   const [diceValues, setDiceValues] = useState([...emptyDiceValues]);
 
   function generatingPosition(numberOfTimes, orderArray, defaultPositionArray){
-    const newPositionArray = Array(16).fill(0);
+    const newPositionArray = [...defaultPositionArray];
     for (let i = 0; i < numberOfTimes; i++) {
       for (let index = 0; index < orderArray.length; index++){
         const value =  defaultPositionArray[orderArray[index]];
-        console.log(value)
         newPositionArray[index] = value;
       }
     }
@@ -78,23 +77,14 @@ export default function App() {
 
     const flipHorizontal = Math.floor(Math.random() * 2);
     const flipvertical = Math.floor(Math.random() * 2);
-    console.log('===========================')
     if (rotate > 4) {
       defaultPositionArray = generatingPosition(rotate - 4, rightRotation, [...defaultPositionArray])
-      console.log(`rotateRight: ${rotate - 4}`);
     }
-    if (rotate < 3) {
+    else if (rotate < 3) {
       defaultPositionArray = generatingPosition(rotate + 1, leftRotation, [...defaultPositionArray])
-      console.log(`rotateLeft: ${rotate + 1}`);
-    }
-    else {
-      console.log("don't rotate");
     }
     defaultPositionArray = generatingPosition(flipHorizontal, horizontalFlipped, [...defaultPositionArray])
-    console.log(`flipHorizontal: ${flipHorizontal}`);
     defaultPositionArray = generatingPosition(flipvertical, vertialFlipped, [...defaultPositionArray])
-    console.log(`flipvertical: ${flipvertical}`);
-    console.log(`PositionArray: ${defaultPositionArray}`)
   }
 
   function randomNumber(values) {
