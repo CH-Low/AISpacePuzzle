@@ -1,6 +1,15 @@
 import { Image, StyleSheet, View } from 'react-native'
+
 export default function Board({ data, combinations, diceValues }) {
     const newDiceValues = [...diceValues];
+    const colors = {
+        black: '#231F1E',
+        blue: '#387DA7',
+        green: '#8ABF3B',
+        red: '#C21D21',
+        white:'#E9E8E5',
+        yellow: '#C19300'
+    };
     return (
         <View style={styles.imageContainer}>
             {[...Array(4)].map((x, row) =>
@@ -8,8 +17,19 @@ export default function Board({ data, combinations, diceValues }) {
                     {[...Array(4)].map((y, column) => {
                         const combination = combinations[row * 4 + column];
                         let diceValue = '';
+                        let pattern = (<Image
+                            key={`${row * 4 + column}_${combination}`}
+                            style={styles.image}
+                            source={data[combination]}
+                        />);
                         if (combination !== 'empty' && combination !== 'x') {
                             diceValue = data[newDiceValues.pop()];
+                            const [color, shape] = combination.split('_');
+                            pattern = (<Image
+                                key={`${row * 4 + column}_${combination}`}
+                                style={[styles.image, { backgroundColor: colors[color]}]}
+                                source={data[shape]}
+                            />);
                         }
                         return (
                             <View key={`${row * 4 + column}`}>
@@ -18,11 +38,7 @@ export default function Board({ data, combinations, diceValues }) {
                                     style={styles.diceImage}
                                     source={diceValue}
                                 />
-                                <Image
-                                    key={`${row * 4 + column}_${combination}`}
-                                    style={styles.image}
-                                    source={data[combination]}
-                                />
+                                {pattern}
                             </View>
                         )
                     })}
@@ -58,5 +74,5 @@ const styles = StyleSheet.create({
         height: 20,
         width: 20,
         zIndex: 1,
-    }
+    },
 })

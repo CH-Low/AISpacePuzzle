@@ -8,35 +8,10 @@ export default function App() {
   const data = {
     empty: require('./assets/combinations/empty.png'),
 
-    black_circle: require('./assets/combinations/black_circle.png'),
-    black_hexagon: require('./assets/combinations/black_hexagon.png'),
-    black_square: require('./assets/combinations/black_square.png'),
-    black_triangle: require('./assets/combinations/black_triangle.png'),
-
-    blue_circle: require('./assets/combinations/blue_circle.png'),
-    blue_hexagon: require('./assets/combinations/blue_hexagon.png'),
-    blue_square: require('./assets/combinations/blue_square.png'),
-    blue_triangle: require('./assets/combinations/blue_triangle.png'),
-
-    green_circle: require('./assets/combinations/green_circle.png'),
-    green_hexagon: require('./assets/combinations/green_hexagon.png'),
-    green_square: require('./assets/combinations/green_square.png'),
-    green_triangle: require('./assets/combinations/green_triangle.png'),
-
-    red_circle: require('./assets/combinations/red_circle.png'),
-    red_hexagon: require('./assets/combinations/red_hexagon.png'),
-    red_square: require('./assets/combinations/red_square.png'),
-    red_triangle: require('./assets/combinations/red_triangle.png'),
-
-    white_circle: require('./assets/combinations/white_circle.png'),
-    white_hexagon: require('./assets/combinations/white_hexagon.png'),
-    white_square: require('./assets/combinations/white_square.png'),
-    white_triangle: require('./assets/combinations/white_triangle.png'),
-
-    yellow_circle: require('./assets/combinations/yellow_circle.png'),
-    yellow_hexagon: require('./assets/combinations/yellow_hexagon.png'),
-    yellow_square: require('./assets/combinations/yellow_square.png'),
-    yellow_triangle: require('./assets/combinations/yellow_triangle.png'),
+    circle: require('./assets/combinations/circle.png'),
+    hexagon: require('./assets/combinations/hexagon.png'),
+    square: require('./assets/combinations/square.png'),
+    triangle: require('./assets/combinations/triangle.png'),
 
     dice_value_1: require('./assets/combinations/1.png'),
     dice_value_2: require('./assets/combinations/2.png'),
@@ -54,13 +29,14 @@ export default function App() {
   const [diceValues, setDiceValues] = useState([...emptyDiceValues]);
 
   function generatingPosition(numberOfTimes, orderArray, defaultPositionArray){
-    const newPositionArray = [...defaultPositionArray];
+    const newPositionArray = Array(16).fill(0);
     for (let i = 0; i < numberOfTimes; i++) {
       for (let index = 0; index < orderArray.length; index++){
         const value =  defaultPositionArray[orderArray[index]];
         newPositionArray[index] = value;
       }
     }
+    console.log(`newPositionArray: ${newPositionArray}`)
     return newPositionArray
   }
 
@@ -77,14 +53,22 @@ export default function App() {
 
     const flipHorizontal = Math.floor(Math.random() * 2);
     const flipvertical = Math.floor(Math.random() * 2);
+    console.log('===========================')
     if (rotate > 4) {
       defaultPositionArray = generatingPosition(rotate - 4, rightRotation, [...defaultPositionArray])
+      console.log(`rotateRight: ${rotate - 4}`);
     }
-    else if (rotate < 3) {
+    if (rotate < 3) {
       defaultPositionArray = generatingPosition(rotate + 1, leftRotation, [...defaultPositionArray])
+      console.log(`rotateLeft: ${rotate + 1}`);
     }
-    defaultPositionArray = generatingPosition(flipHorizontal, horizontalFlipped, [...defaultPositionArray])
-    defaultPositionArray = generatingPosition(flipvertical, vertialFlipped, [...defaultPositionArray])
+    else {
+      console.log("don't rotate");
+    }
+    // defaultPositionArray = generatingPosition(flipHorizontal, horizontalFlipped, [...defaultPositionArray])
+    // console.log(`flipHorizontal: ${flipHorizontal}`);
+    // defaultPositionArray = generatingPosition(flipvertical, vertialFlipped, [...defaultPositionArray])
+    // console.log(`flipvertical: ${flipvertical}`);
   }
 
   function randomNumber(values) {
