@@ -113,7 +113,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
-      <Text style={styles.text}>Fan Made Final Combination Cards</Text>
+      <Text style={styles.text}>Final Combination Cards</Text>
       <Board data={data} finalCombinations={finalCombinations} diceValues={diceValues} />
       <View style={styles.buttonContainer}>
         <SecondaryIconButton style={styles.buttonImage} onPress={rotateLeft}
@@ -131,7 +131,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: '#111A2D',
     alignItems: 'center',
   },
   text: {
