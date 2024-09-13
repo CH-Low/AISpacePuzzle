@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text } from 'react-native';
-import Button, { SecondaryButton } from './Button';
+import { SecondaryIconButton, SecondaryButton } from './Button';
 import { useState } from 'react';
 import Board from './Board';
 
@@ -116,15 +116,13 @@ export default function App() {
       <Text style={styles.text}>Fan Made Final Combination Cards</Text>
       <Board data={data} finalCombinations={finalCombinations} diceValues={diceValues} />
       <View style={styles.buttonContainer}>
-        <Button style={styles.button} onPress={rotateLeft}>
-          Left
-        </Button>
+        <SecondaryIconButton style={styles.buttonImage} onPress={rotateLeft}
+          source={require('./assets/combinations/rotate-left.png')} />
         <SecondaryButton style={styles.button} onPress={randomizeHandler}>
           Randomize
         </SecondaryButton>
-        <Button style={styles.button} onPress={rotateRight}>
-          Right
-        </Button>
+        <SecondaryIconButton style={styles.buttonImage} onPress={rotateRight}
+          source={require('./assets/combinations/rotate-right.png')} />
       </View>
     </View>
   );
@@ -154,11 +152,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flex: 1,
     alignItems: 'baseline',
-    marginTop: 10
+    marginTop: 10,
   },
   button: {
-    alignSelf: "center",
-    width: "25%",
-    marginRight: 10,
+    alignSelf: 'center',
+    width: 150,
+    marginHorizontal: 20,
+  },
+  buttonImage: {
+    marginTop: 2,
   }
 });
