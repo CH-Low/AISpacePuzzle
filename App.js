@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text } from 'react-native';
 import { SecondaryIconButton, SecondaryButton } from './Button';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Board from './Board';
 
 const data = {
@@ -27,6 +27,10 @@ export default function App() {
   const emptyDiceValues = Array(4).fill('empty');
   const [finalCombinations, setFinalCombinations] = useState([...emptyCombinations]);
   const [diceValues, setDiceValues] = useState([...emptyDiceValues]);
+
+  useEffect(() => {
+    randomizeHandler()
+  }, [])
 
   function generatingPosition(numberOfTimes, orderArray, defaultPositionArray) {
     const newPositionArray = [...defaultPositionArray];
@@ -55,7 +59,8 @@ export default function App() {
     defaultPositionArray = generatingPosition(flipHorizontal, horizontalFlipped, [...defaultPositionArray]);
     defaultPositionArray = generatingPosition(flipVertical, vertialFlipped, [...defaultPositionArray]);
 
-    const combinationNumber = Math.floor(Math.random() * 20);
+    // const combinationNumber = Math.floor(Math.random() * 20);
+    const combinationNumber = 0;
     const chosenCombination = defaultCombinations[combinationNumber];
     const newCombination = Array(5).fill(0);
     for (let i = 0; i < 5; i++) {
