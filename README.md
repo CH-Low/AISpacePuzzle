@@ -3,6 +3,7 @@
 This is a fan-made tool designed to generate combinations. It does not include colorblind-friendly options.
 
 Note: Generating different combinations should be as simple as pressing a button. I aim to keep the tool straightforward and won't be adding additional features.
+![6278311648183828918](https://github.com/user-attachments/assets/be347ced-b623-47a3-8d84-9c4e0352b05f)
 
 ## Disclaimer
 
