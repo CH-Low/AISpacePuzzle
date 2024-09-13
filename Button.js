@@ -13,11 +13,24 @@ export default function Button({ children, onPress, style, buttonStyle, inactive
     )
 }
 
+export function SecondaryButton({ children, onPress, style }) {
+    return (
+      <View style={style}>
+        <Pressable onPress={onPress} style={({ pressed }) => pressed && styles.pressed}>
+          <View style={styles.secondaryButton}>
+            <Text style={styles.buttonText}>
+              {children}</Text>
+          </View>
+        </Pressable>
+      </View>
+    )
+  }
+
 const styles = StyleSheet.create({
     button: {
         borderRadius: 16,
         padding: 8,
-        backgroundColor: '#00cc66',
+        backgroundColor: '#007bff',
     },
     inactiveButton: {
         backgroundColor: "white",
@@ -25,7 +38,7 @@ const styles = StyleSheet.create({
     secondaryButton: {
         borderRadius: 16,
         padding: 8,
-        backgroundColor: "black",
+        backgroundColor: "#6c757d",
     },
     flat: {
         backgroundColor: 'transparent'
