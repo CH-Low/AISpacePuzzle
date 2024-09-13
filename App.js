@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text } from 'react-native';
-import { SecondaryIconButton, SecondaryButton } from './Button';
 import { useEffect, useState } from 'react';
 import Board from './Board';
+import ButtonContainer from './ButtonContainer';
 
 const data = {
   empty: require('./assets/combinations/empty.png'),
@@ -120,15 +120,7 @@ export default function App() {
       <StatusBar style="dark" />
       <Text style={styles.text}>Final Combination Cards</Text>
       <Board data={data} finalCombinations={finalCombinations} diceValues={diceValues} />
-      <View style={styles.buttonContainer}>
-        <SecondaryIconButton style={styles.buttonImage} onPress={rotateLeft}
-          source={require('./assets/combinations/rotate-left.png')} />
-        <SecondaryButton style={styles.button} onPress={randomizeHandler}>
-          Randomize
-        </SecondaryButton>
-        <SecondaryIconButton style={styles.buttonImage} onPress={rotateRight}
-          source={require('./assets/combinations/rotate-right.png')} />
-      </View>
+      <ButtonContainer rotateLeft={rotateLeft} randomizeHandler={randomizeHandler} rotateRight={rotateRight} />
     </View>
   );
 }
@@ -142,7 +134,6 @@ const styles = StyleSheet.create({
   text: {
     color: 'white',
     fontSize: 24,
-    width: 250,
     textAlign: 'center',
     padding: 10,
     marginTop: 100,
@@ -152,19 +143,4 @@ const styles = StyleSheet.create({
     width: 450,
     borderRadius: 20,
   },
-  buttonContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    flex: 1,
-    alignItems: 'baseline',
-    marginTop: 10,
-  },
-  button: {
-    alignSelf: 'center',
-    width: 150,
-    marginHorizontal: 20,
-  },
-  buttonImage: {
-    marginTop: 2,
-  }
 });

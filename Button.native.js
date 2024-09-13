@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'white',
         textAlign: 'center',
-        fontSize: 24,
+        fontSize: 30,
     },
     inactiveButtonText: {
         color: 'black'

@@ -49,9 +49,10 @@ export default function Board({ data, finalCombinations, diceValues }) {
 }
 const styles = StyleSheet.create({
     imageContainer: {
-        paddingVertical: 10,
+        paddingVertical: 40,
         paddingHorizontal: 10,
         borderRadius: 20,
+        flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
