@@ -11,6 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "experiments": {
+      "baseUrl": "/aispacepuzzle"
+    },
     "ios": {
       "supportsTablet": true
     },
