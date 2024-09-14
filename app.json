@@ -22,7 +22,9 @@
       "package": "com.chernhwee.AISpacePuzzle"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "output": "single",
+      "bundler": "metro"
     },
     "extra": {
       "eas": {
