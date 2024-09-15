@@ -3,14 +3,15 @@
 This is a fan-made tool designed to generate combinations. It does not include colorblind-friendly options.
 
 Note: Generating different combinations should be as simple as pressing a button. I aim to keep the tool straightforward and won't be adding additional features.
-![6278311648183829137](https://github.com/user-attachments/assets/218782a8-2720-4cd1-aa39-7b43a80e0b3f)
+![6282791745750155517](https://github.com/user-attachments/assets/f42393d0-f80b-4443-8c82-c5820ecd4d32)
+
 
 ## Disclaimer
 
 This is an unofficial app developed as a private project and is not affiliated with Smart Flamingo.
 
 ## Download
-You can download the android apk [here](https://github.com/CH-Low/AISpacePuzzle/releases/tag/V1.0.2)
+You can download the android apk [here](https://github.com/CH-Low/AISpacePuzzle/releases/tag/V1.0.3)
 
 ## Development
 Developed in React Native with Expo.
@@ -34,8 +35,3 @@ npm install
 npm start
 ```
 Now install the **Expo Go** app on either your device or emulator and scan the displayed **QR code** to access the app.
-
-## To Be Continued 
-1. ~~Waiting for my board game to arrive in order to accurately generate the 20 combinations, rather than relying on random generation.~~ Done
-2. Need assistance with creating colorblind-friendly backgrounds and/or shapes to enhance user experience.
-3. ~~Create an APK for download via GitHub.~~ Done
