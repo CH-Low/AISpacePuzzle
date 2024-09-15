@@ -2,14 +2,6 @@ import { Image, StyleSheet, View } from 'react-native'
 
 export default function Board({ data, finalCombinations, diceValues }) {
     const newDiceValues = [...diceValues];
-    const colors = {
-        black: '#231F1E',
-        blue: '#387DA7',
-        green: '#8ABF3B',
-        red: '#C21D21',
-        white:'#D4D3D0',
-        yellow: '#C19300'
-    };
     return (
         <View style={styles.imageContainer}>
             {[...Array(4)].map((x, column) =>
@@ -25,11 +17,18 @@ export default function Board({ data, finalCombinations, diceValues }) {
                         if (combination !== 'empty' && combination !== 'x') {
                             diceValue = data[newDiceValues.pop()];
                             const [color, shape] = combination.split('_');
-                            pattern = (<Image
-                                key={`${row * 4 + column}_${combination}`}
-                                style={[styles.image, { backgroundColor: colors[color]}]}
-                                source={data[shape]}
-                            />);
+                            pattern = (
+                                <>
+                                    <Image
+                                        style={[styles.image]}
+                                        source={data[color]}
+                                    />
+                                    <Image
+                                        key={`${row * 4 + column}_${combination}`}
+                                        style={[styles.image, { position: 'absolute' }]}
+                                        source={data[shape]}
+                                    />
+                                </>);
                         }
                         return (
                             <View key={`${row * 4 + column}`}>

@@ -19,6 +19,13 @@ const data = {
   dice_value_5: require('./assets/combinations/5.png'),
   dice_value_6: require('./assets/combinations/6.png'),
 
+  black: require('./assets/combinations/black.png'),
+  blue: require('./assets/combinations/blue.png'),
+  green: require('./assets/combinations/green.png'),
+  red: require('./assets/combinations/red.png'),
+  white: require('./assets/combinations/white.png'),
+  yellow: require('./assets/combinations/yellow.png'),
+
   x: require('./assets/combinations/X.png')
 }
 
