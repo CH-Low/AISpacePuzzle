@@ -66,8 +66,7 @@ export default function App() {
     defaultPositionArray = generatingPosition(flipHorizontal, horizontalFlipped, [...defaultPositionArray]);
     defaultPositionArray = generatingPosition(flipVertical, vertialFlipped, [...defaultPositionArray]);
 
-    // const combinationNumber = Math.floor(Math.random() * 20);
-    const combinationNumber = 0;
+    const combinationNumber = Math.floor(Math.random() * 20);
     const chosenCombination = defaultCombinations[combinationNumber];
     const newCombination = Array(5).fill(0);
     for (let i = 0; i < 5; i++) {
@@ -113,7 +112,6 @@ export default function App() {
     const leftRotation = [3, 7, 11, 15, 2, 6, 10, 14, 1, 5, 9, 13, 0, 4, 8, 12];
     const defaultPositionArray = generatingPosition(1, leftRotation, [...finalCombinations]);
     setFinalCombinations(defaultPositionArray);
-
   }
 
   function rotateRight() {
