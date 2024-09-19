@@ -11,7 +11,9 @@ Note: Generating different combinations should be as simple as pressing a button
 This is an unofficial app developed as a private project and is not affiliated with Smart Flamingo.
 
 ## Download
-You can download the android apk [here](https://github.com/CH-Low/AISpacePuzzle/releases/tag/V1.0.3)
+You can download the android apk [here](https://github.com/CH-Low/AISpacePuzzle/releases/tag/V1.0.3).
+
+The web version is available [here](https://ai-space-puzzle.web.app/).
 
 ## Development
 Developed in React Native with Expo.
