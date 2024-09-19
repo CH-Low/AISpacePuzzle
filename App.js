@@ -92,7 +92,7 @@ export default function App() {
     const combination = generatePosition();
     let defaultColorArray = ['black', 'blue', 'green', 'red', 'white', 'yellow'];
     let defaultShapeArray = ['circle', 'hexagon', 'square', 'triangle'];
-    let defaultDiceValueArray = ['1', '2', '3', '4', '5', '6'];
+    let defaultDiceValueArray = ['2', '3', '4', '5', '6'];
 
     let newColor = 'black', newShape = 'circle', newDiceValue = '1';
     for (let i = 0; i < 4; i++) {
